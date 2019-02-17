@@ -1,0 +1,10 @@
+<input #inputFile type="file" class="inputButton" />
+<button mat-button color="primary" (click)=inputFile.click()>Uploader votre image</button>
+
+
+<form [formGroup]="myGroup">
+  <input matInput type="url" name="site" placeholder="url" formControlName="firstName" />
+  <button type="submit">Submit</button>
+</form>
+
+<color-image-image *ngIf="myGroup.touched===true" [image]="myGroup.value['firstName']"></color-image-image>
