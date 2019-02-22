@@ -8,7 +8,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
   imports: [
     CommonModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
   ],
   exports: [
     MaterialModule,

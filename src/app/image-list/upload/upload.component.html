@@ -1,10 +1,29 @@
-<input #inputFile type="file" class="inputButton" />
-<button mat-button color="primary" (click)=inputFile.click()>Uploader votre image</button>
+<section fxLayout="column">
+  <div fxLayoutAlign="center">
+    <input #inputFile type="file" accept="image/*" id="inputButton" (change)=onUpload($event) />
+    <button mat-button color="primary" (click)=inputFile.click()>Uploader votre image</button>
+  </div>
 
+  <!-- <div id="formUrl" fxLayoutAlign="center stretch">
+    <form [formGroup]="myGroup">
+      <mat-form-field>
+        <input matInput type="url" placeholder="url" formControlName="url" pattern="https?://.+" required/>
+      </mat-form-field>
+      <button mat-button color="primary" type="submit" (click)="onSubmit()">Submit</button>
+    </form>
+  </div> -->
+</section>
 
-<form [formGroup]="myGroup">
-  <input matInput type="url" name="site" placeholder="url" formControlName="firstName" />
-  <button type="submit">Submit</button>
-</form>
+<button mat-fab color="accent" (click)="input.click()">
+  <mat-icon aria-label="Upload image">add</mat-icon>
+</button>
+<input type="file" accept="image/*" id="inputButton" (change)="onUpload($event)" #input/>
 
-<color-image-image *ngIf="myGroup.touched===true" [image]="myGroup.value['firstName']"></color-image-image>
+<!-- <color-image-image *ngIf="image" [image]="image"></color-image-image> -->
+<color-image-image *ngIf="isSubmit" [image]="image" [file]="uploadedFile"></color-image-image>
+
+<!-- <ng-template #upload>
+<color-image-image [image]="image"></color-image-image>
+</ng-template> -->
+
+<!-- pattern="/^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/" -->

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'color-image-upload',
@@ -9,17 +9,34 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class UploadComponent implements OnInit {
   public myGroup: FormGroup;
   public urlName: string;
-
+  public image: any;
+  public uploadedFile: File;
+  public isSubmit = false;
 
   constructor() { }
 
   ngOnInit() {
     this.myGroup = new FormGroup({
-      firstName: new FormControl()
+      url: new FormControl("URL", Validators.required)
     });
   }
 
   onSubmit() {
+    if ("VALID" === this.myGroup.status) {
+      this.isSubmit = true;
+      this.image = this.myGroup.value['url'];
+      this.myGroup.reset();
+    }
   }
 
+  onUpload(event) {
+    let reader = new FileReader();
+    this.isSubmit = true;
+    this.uploadedFile = event.target.files[0];
+
+    reader.onload = () => {
+      this.image = reader.result;      
+    };
+    reader.readAsDataURL(this.uploadedFile);    
+  }
 }

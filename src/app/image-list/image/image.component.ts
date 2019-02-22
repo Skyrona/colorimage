@@ -11,19 +11,24 @@ import { ColorModel } from 'src/app/shared/models/imagga-colors/colors-model';
 export class ImageComponent implements OnInit, OnChanges {
 
   @Input() image: string;
+  @Input() file: File;
+
   public colorsImage: ColorModel[];
   constructor(private imaggaService: ImaggaService) { }
 
   ngOnInit() {
-    this.imaggaService.getColorsByUrl(this.image).subscribe(
-      (data:ColorListModel)=>{
-        this.colorsImage=data.result.colors.image_colors;        
-      }
-    )
-  }
-
-  ngOnChanges() {
+    console.log(this.image);
     
   }
+
+  ngOnChanges() {    
+    console.log(this.image);
+    
+      this.imaggaService.getColorsByImage(this.file).subscribe(
+        (data: ColorListModel) => {
+          this.colorsImage = data.result.colors.image_colors;
+        }
+      )
+    }
 
 }

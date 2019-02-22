@@ -16,7 +16,7 @@ import { ColorsComponent } from './colors/colors.component';
     ImageComponent, 
     HeaderComponent, 
     UploadComponent, 
-    ColorsComponent
+    ColorsComponent,
   ],
   imports: [
     CommonModule,

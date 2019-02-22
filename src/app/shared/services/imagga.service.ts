@@ -10,8 +10,21 @@ export class ImaggaService {
 
   getColorsByUrl(url: string) {
     return this.http.get(`https://api.imagga.com/v2/colors?image_url=${url}`,
-    {headers: new HttpHeaders().set("Authorization", "Basic YWNjXzkxNmU3Y2E5YmJhNDBmOTo1MmQ4ZGYzMDliNTA2YmI2MjdhOTBkOTAzMjJhYWQyNw==")}
-    )};
+      {
+        headers: new HttpHeaders().set("Authorization", "Basic YWNjXzkxNmU3Y2E5YmJhNDBmOTo1MmQ4ZGYzMDliNTA2YmI2MjdhOTBkOTAzMjJhYWQyNw=="),
+      },
+    )
+  };
 
-  getColorsByImage(image: any) { };
+  getColorsByImage(image: File) {
+    let formData = new FormData;
+    formData.append("image", image);
+    return this.http.post(
+      `https://api.imagga.com/v2/colors`,
+      formData,
+      {
+        headers: new HttpHeaders().set("Authorization", "Basic YWNjXzkxNmU3Y2E5YmJhNDBmOTo1MmQ4ZGYzMDliNTA2YmI2MjdhOTBkOTAzMjJhYWQyNw=="),
+      },
+    )
+  };
 }

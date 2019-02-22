@@ -1,5 +1,9 @@
-:host{
-    .inputButton{
+:host {
+    // position: fixed;
+    // bottom: 1em;
+    // right: 1em;
+    // z-index: 9;
+    #inputButton {
         display: none;
     }
 }

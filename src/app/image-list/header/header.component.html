@@ -1,34 +1,13 @@
-<mat-toolbar>
-  <!-- <span>My Application</span> -->
-  <mat-nav-list role="navigation" position="end">
-    <!-- <span class="example-fill-remaining-space"></span> -->
-    <mat-list-item>Application</mat-list-item>
-    <mat-list-item>Accueil</mat-list-item>
-    <mat-list-item>Galerie</mat-list-item>
-    <mat-list-item>Contact</mat-list-item>
-  </mat-nav-list>
-</mat-toolbar>
-
 <mat-sidenav-container>
   <mat-sidenav #sidenav role="navigation">
     <mat-nav-list>
       <a mat-list-item>
-        <!-- <mat-icon class="icon">input</mat-icon> -->
-        <!-- <span class="label"> -->
-        Login
-        <!-- </span> -->
+        <mat-icon class="icon">home</mat-icon>
+        Home
       </a>
       <a mat-list-item>
-        <!-- <mat-icon class="icon">home</mat-icon>   -->
-        <span class="label">Home</span>
-      </a>
-      <a mat-list-item>
-        <!-- <mat-icon class="icon">dashboard</mat-icon>   -->
-        <span class="label">Dashboard</span>
-      </a>
-      <a mat-list-item type="button">
-        <!-- <mat-icon class="icon">input</mat-icon> -->
-        <span class="label">LogOut</span>
+        <mat-icon class="icon">dashboard</mat-icon>
+        Dashboard
       </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -43,37 +22,27 @@
       <!-- </div> -->
 
       <a>
-        Material Blog
+        ColorImage
       </a>
       <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <ul fxLayout fxLayoutGap="20px" class="navigation-items">
           <li>
             <a>
-              <!-- <mat-icon class="icon">input</mat-icon> -->
-              <span class="label">Login</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <!-- <mat-icon class="icon">home</mat-icon> -->
+              <mat-icon class="icon">home</mat-icon>
               <span class="label">Home</span>
             </a>
           </li>
           <li>
             <a>
-              <!-- <mat-icon class="icon">dashboard</mat-icon> -->
-              <span class="label">Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <!-- <mat-icon class="icon">input</mat-icon> -->
-              <span class="label">LogOut</span>
+              <mat-icon class="icon">dashboard</mat-icon>
+              <span class="label">Galerie</span>
             </a>
           </li>
         </ul>
       </div>
     </mat-toolbar>
+
+    <color-image-upload></color-image-upload>
 
   </mat-sidenav-content>
 </mat-sidenav-container>

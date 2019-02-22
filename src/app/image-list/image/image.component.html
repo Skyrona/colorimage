@@ -1,2 +1,8 @@
-<img [src]="image"/>
-<color-image-colors *ngIf="colorsImage" [colorsDiv]="colorsImage"></color-image-colors>
+<div class="container" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+    <div fxFlex="30%" fxLayoutAlign="center">
+        <img [src]="image"/>
+    </div>
+    <div class="item item-2" fxFlex="30%" fxFlexAlign="center" fxLayoutAlign="start center">
+        <color-image-colors fxLayout="column" fxLayoutAlign="space-evenly stretch" fxFlex="70%" *ngIf="colorsImage" [colorsDiv]="colorsImage"></color-image-colors>
+    </div>
+</div>
