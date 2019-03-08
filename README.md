@@ -1,6 +1,15 @@
 # Colorimage
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a72f6950108c458da7be1330cd063352)](https://www.codacy.com/app/Skyrona/colorimage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Skyrona/colorimage&amp;utm_campaign=Badge_Grade)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
+
+## How to install
+
+Clone the repository and install the dependencies : 
+```bash
+npm install
+```
 
 ## Development server
 
